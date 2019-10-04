@@ -1,0 +1,27 @@
+{
+  "shoplist": [
+    {
+      "id": 0,
+      "name": "YAKINIKU",
+      "text": {
+        "title": "焼き肉のお店だよ！",
+        "description": "この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。"
+      },
+      "number": "09011112222",
+      "address": "兵庫県西宮市一ヶ谷町1-62-215",
+      "site": "https://www.google.com",
+      "items": [
+        {
+          "id": 0,
+          "name": "yasuimeat",
+          "price": 200
+        },
+        {
+          "id": 1,
+          "name": "takaipork",
+          "price": 600
+        }
+      ]
+    }
+  ]
+}
