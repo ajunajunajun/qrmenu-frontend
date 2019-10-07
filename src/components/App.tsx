@@ -6,7 +6,7 @@ import PrivateRoute from '../helpers/PrivateRoute'
 import IndexPage from './pages/IndexPage/IndexPage'
 import CreateMenuPage from './pages/CreateMenuPage/CreateMenuPage'
 import MyPage from './pages/MyPage/MyPage'
-import AppHeader from './projects/AppHeader'
+import AppHeader from './projects/AppHeader/AppHeader'
 
 export default () => (
   <RootProvider>
