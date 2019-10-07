@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import '../../styles/projects/_header.scss'
-import { useRootContext } from '../../store/RootContext'
-import Button from '../ui/Button/Button'
+import '../../../styles/projects/_header.scss'
+import { useRootContext } from '../../../store/RootContext'
+import Button from '../../ui/Button/Button'
 
 /**
  * アプリのヘッダー用プロジェクト
@@ -27,7 +27,7 @@ export default function AppHeader() {
           <Button onClick={setAuth}>{String(isAuthenticated)}</Button>
         </>
       ) : (
-        <Button onClick={setAuth}>{String(isAuthenticated)}</Button>
+        <></>
       )}
     </header>
   )

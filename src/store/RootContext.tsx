@@ -1,8 +1,11 @@
 import React, { createContext, useState, useMemo, useContext } from 'react'
+import { shopdataType } from '../domains/shopdata'
 
 export const RootContext = createContext<{
   isAuthenticated: boolean
   setAuthenticate: React.Dispatch<React.SetStateAction<boolean>>
+  isShopdata: shopdataType
+  setShopdata: React.Dispatch<React.SetStateAction<shopdataType>>
 } | null>(null)
 
 /**
@@ -29,8 +32,20 @@ export const useRootContext = () => {
  */
 export const RootProvider = ({ children }: Props) => {
   const [isAuthenticated, setAuthenticate] = useState<boolean>(false)
-  const value = useMemo(() => ({ isAuthenticated, setAuthenticate }), [
-    isAuthenticated
-  ])
+  const [isShopdata, setShopdata] = useState<shopdataType>({
+    shoplist: {
+      id: -1,
+      name: '',
+      text: { title: '', description: '' },
+      number: '',
+      address: '',
+      site: '',
+      items: []
+    }
+  })
+  const value = useMemo(
+    () => ({ isAuthenticated, setAuthenticate, isShopdata, setShopdata }),
+    [isAuthenticated, isShopdata]
+  )
   return <RootContext.Provider value={value}>{children}</RootContext.Provider>
 }

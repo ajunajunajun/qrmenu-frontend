@@ -1,5 +1,6 @@
 import React from 'react'
 import '../../../styles/layouts/_inner.scss'
+import LoginForm from '../../projects/LoginForm/LoginForm'
 
 /**
  * 初めに表示するページ
@@ -12,6 +13,7 @@ export default function IndexPage() {
       <p>
         この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れ{' '}
       </p>
+      <LoginForm />
     </div>
   )
 }
