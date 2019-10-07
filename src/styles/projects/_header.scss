@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.p-header {
+  background: white;
+  width: 100vw;
+  border-bottom: 1px solid silver;
+  z-index: 1;
+  &-inner {
+    padding: 0 15px;
+  }
+}

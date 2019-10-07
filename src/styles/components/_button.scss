@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+.c-button {
+  display: inline-block;
+  background: white;
+  text-decoration: none;
+  color: black;
+  border: 1px solid silver;
+  border-radius: 5px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+  &--small {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+  &--medium {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+  &--large {
+    font-size: 1.25rem;
+    padding: 1rem 2rem;
+  }
+}
