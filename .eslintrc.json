@@ -2,6 +2,6 @@
   "extends": "react-app",
   "plugins": ["import"],
   "rules": {
-    "import/order": ["warn"]
+    "import/order": 1
   }
 }
