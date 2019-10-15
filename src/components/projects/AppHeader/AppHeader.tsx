@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import '../../../styles/projects/_header.scss'
+import '../../../styles/layouts/_header.scss'
 import { useRootContext } from '../../../store/RootContext'
 import Button from '../../ui/Button/Button'
 
@@ -15,7 +15,7 @@ export default function AppHeader() {
   }
 
   return (
-    <header className="p-header p-header-inner">
+    <header className="l-header l-header-inner">
       <Button as={Link} to="/">
         Home
       </Button>
