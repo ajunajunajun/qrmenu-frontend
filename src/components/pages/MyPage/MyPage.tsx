@@ -1,6 +1,8 @@
 import React from 'react'
 import { useRootContext } from '../../../store/RootContext'
 
+import '../../../styles/utilities/_inner.scss'
+
 /**
  * 初めに表示するページ
  */
@@ -8,7 +10,7 @@ export default function MyPage() {
   const { isShopdata } = useRootContext()
   const data = isShopdata.shoplist
   return (
-    <div className="l-inner">
+    <div className="u-inner">
       <h1>MyPage</h1>
       <h2>MyPage dayo~</h2>
       <p>{data.id}</p>

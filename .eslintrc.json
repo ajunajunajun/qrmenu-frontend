@@ -1,6 +1,5 @@
 {
   "extends": "react-app",
-  "plugins": ["import"],
   "rules": {
     "import/order": 1
   }

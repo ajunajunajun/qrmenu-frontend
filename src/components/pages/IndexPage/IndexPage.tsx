@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../../styles/layouts/_inner.scss'
+import '../../../styles/utilities/_inner.scss'
 import LoginForm from '../../projects/LoginForm/LoginForm'
 
 /**
@@ -7,7 +7,7 @@ import LoginForm from '../../projects/LoginForm/LoginForm'
  */
 export default function IndexPage() {
   return (
-    <div className="l-inner">
+    <div className="u-inner">
       <h1>IndexPage</h1>
       <h2>IndexPage dayo~</h2>
       <p>
