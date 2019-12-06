@@ -15,20 +15,22 @@ export default function AppHeader() {
   }
 
   return (
-    <header className="l-header l-header-inner">
-      <Button as={Link} to="/">
-        Home
-      </Button>
-      {isAuthenticated ? (
-        <>
-          <Button as={Link} to="/createmenu">
-            CreateMenu
-          </Button>
-          <Button onClick={setAuth}>{String(isAuthenticated)}</Button>
-        </>
-      ) : (
-        <></>
-      )}
+    <header className="l-header">
+      <div className="l-header-inner">
+        <Button as={Link} to="/">
+          Home
+        </Button>
+        {isAuthenticated ? (
+          <>
+            <Button as={Link} to="/createmenu">
+              CreateMenu
+            </Button>
+            <Button onClick={setAuth}>{String(isAuthenticated)}</Button>
+          </>
+        ) : (
+          <></>
+        )}
+      </div>
     </header>
   )
 }

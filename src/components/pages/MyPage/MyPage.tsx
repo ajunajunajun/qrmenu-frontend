@@ -1,5 +1,5 @@
 import React from 'react'
-import { useRootContext } from '../../../store/RootContext'
+import { useShopContext } from '../../../store/ShopContext'
 
 import '../../../styles/utilities/_inner.scss'
 
@@ -7,7 +7,7 @@ import '../../../styles/utilities/_inner.scss'
  * 初めに表示するページ
  */
 export default function MyPage() {
-  const { isShopdata } = useRootContext()
+  const { isShopdata } = useShopContext()
   const data = isShopdata.shoplist
   return (
     <div className="u-inner">
