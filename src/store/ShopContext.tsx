@@ -7,19 +7,19 @@ export const ShopContext = createContext<{
 } | null>(null)
 
 /**
- * RootContext の Props
+ * ShopContext の Props
  */
 type Props = {
   children: React.ReactNode
 }
 
 /**
- * RootContext の null の可能性を消す Hook
+ * ShopContext の null の可能性を消す Hook
  */
 export const useShopContext = () => {
   const state = useContext(ShopContext)
-  if (state === null) {
-    throw new Error("Don't use useRootContent outside a RootProvider")
+  if (!state) {
+    throw new Error("Don't use useShopContext outside a ShopProvider")
   }
   return state
 }

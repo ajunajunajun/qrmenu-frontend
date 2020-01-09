@@ -17,8 +17,8 @@ type Props = {
  */
 export const useRootContext = () => {
   const state = useContext(RootContext)
-  if (state === null) {
-    throw new Error("Don't use useRootContent outside a RootProvider")
+  if (!state) {
+    throw new Error("Don't use useRootContext outside a RootProvider")
   }
   return state
 }
