@@ -7,7 +7,7 @@ import '../../../../../styles/projects/_createmenu.scss'
  * クリエイトメニュー画面のサイドバー用プロジェクト
  */
 export default function CreateMenuEdit() {
-  const { isShopdata, setShopdata } = useShopContext()
+  const { isShopdata } = useShopContext()
   const items = isShopdata.shoplist.items
   return (
     <div className="c-createmenuedit">
