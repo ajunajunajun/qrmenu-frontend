@@ -12,7 +12,7 @@ import icon from '../MyPage/image/img3.png'
  * 初めに表示するページ
  */
 export default function MyPage() {
-  const { isShopdata } = useRootContext()
+  const { isShopdata } = useShopContext()
   const data = isShopdata.shoplist
   return (
     <div className="u-inner">

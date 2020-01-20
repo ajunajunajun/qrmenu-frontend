@@ -1,6 +1,7 @@
 import React from 'react'
 import '../../../styles/projects/_loginform.scss'
 import { useRootContext } from '../../../store/RootContext'
+import { useShopContext } from '../../../store/ShopContext'
 import { shoplist as shoplistJson } from '../../../fixtures/shoplist.json'
 import Button from '../../ui/Button/Button'
 
@@ -10,7 +11,7 @@ import Button from '../../ui/Button/Button'
 export default function LoginForm() {
   const { isAuthenticated, setAuthenticate } = useRootContext()
 
-  const { setShopdata } = useRootContext()
+  const { setShopdata } = useShopContext()
   const Login = () => {
     setAuthenticate(!isAuthenticated)
     setShopdata({
