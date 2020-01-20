@@ -1,6 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import Button from '../../ui/Button/Button'
 import { useShopContext } from '../../../store/ShopContext'
 import MenuObject from './CreateMenuObject/CreateMenuItems/CreateMenuItems'
 
@@ -9,7 +7,6 @@ import MenuObject from './CreateMenuObject/CreateMenuItems/CreateMenuItems'
  */
 export default function CreateMenu() {
   const { isShopdata } = useShopContext()
-
   const items = isShopdata.shoplist.items
 
   return (
@@ -21,10 +18,6 @@ export default function CreateMenu() {
           ))}
         </div>
       </div>
-      {/* todo menuに付けたidで動的にリンク先決定する */}
-      <Button as={Link} to="/menu/1" items={items}>
-        印刷ページ
-      </Button>
     </div>
   )
 }

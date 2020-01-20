@@ -26,7 +26,11 @@ export default function CreateMenuEdit() {
             value={String(item.price)}
             placeholder="価格"
           />
-          <button>確定</button>
+          <input
+            className="c-createmenuedit-item__input"
+            value={String(item.description)}
+            placeholder="説明"
+          />
         </div>
       ))}
     </div>

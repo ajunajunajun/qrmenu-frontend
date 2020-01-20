@@ -38,4 +38,7 @@ export type itemType = {
 
   /** 商品価格 */
   price: number
+
+  /** 商品説明 */
+  description: string
 }
