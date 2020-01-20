@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 import { useRootContext } from '../../../store/RootContext'
 import '../../../styles/utilities/_mypage.scss'
 import '../../../styles/utilities/_inner.scss'
-import { Link } from 'react-router-dom'
 import img1 from '../MyPage/image/img1.jpeg'
 import img2 from '../MyPage/image/img2.jpg'
 import icon from '../MyPage/image/img3.png'
