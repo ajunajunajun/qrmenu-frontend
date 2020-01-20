@@ -6,8 +6,13 @@ import CreateMenuEdit from './CreateMenuEdit/CreateMenuEdit'
  */
 export default function CreateMenuSideBar() {
   return (
-    <div className="p-createmenusidebar p-createmenusidebar-inner">
-      <CreateMenuEdit />
+    <div className="p-createmenusidebar">
+      <div className="p-createmenusidebar-title">
+        <p>タブの追加</p>
+      </div>
+      <div className="p-createmenusidebar-inner">
+        <CreateMenuEdit />
+      </div>
     </div>
   )
 }

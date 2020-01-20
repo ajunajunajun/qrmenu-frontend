@@ -8,6 +8,7 @@ import IndexPage from './pages/IndexPage/IndexPage'
 import CreateMenuPage from './pages/CreateMenuPage/CreateMenuPage'
 import MyPage from './pages/MyPage/MyPage'
 import AppHeader from './projects/AppHeader/AppHeader'
+import MenuPage from './pages/MenuPage/MenuPage'
 
 export default () => (
   <RootProvider>
@@ -29,6 +30,7 @@ export default () => (
                 exact={true}
                 component={CreateMenuPage}
               />
+              <Route path="/menu/:menuId" exact={true} component={MenuPage} />
             </Switch>
           </PrivateRoute>
         </Switch>

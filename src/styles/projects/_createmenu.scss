@@ -1,17 +1,19 @@
 @charset "UTF-8";
 
-$sidebar_width: 170px;
+$sidebar_width: 250px;
+$sidebar_title_height: 20px;
 
 .p-createmenu {
-  margin-left: Calc($sidebar_width + 30px);
+  margin-left: Calc($sidebar_width);
   background-color: snow;
   &-inner {
-    padding: 15px;
+    padding: $sidebar_title_height;
+    height: calc(100vh - 86px - 40px);
   }
   &-wrapper {
-    position: relative;
+    margin: 0 auto;
+    height: 100%;
     width: 400px;
-    height: 80vh;
     overflow: scroll;
     border: 1px solid silver;
     border-radius: 5px;
@@ -68,21 +70,37 @@ $sidebar_width: 170px;
   }
 }
 
+.p-createmenuheader {
+  border-bottom: 1px solid silver;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  &-title {
+    margin: auto 0;
+  }
+}
+
 .p-createmenusidebar {
   position: absolute;
   background-color: white;
-  height: 100vw;
   width: $sidebar_width;
   border-right: 1px solid silver;
   z-index: 1;
   &-inner {
-    padding: 15px;
+    height: calc(100vh - 86px - 40px);
+    overflow: scroll;
+  }
+  &-title {
+    height: $sidebar_title_height;
+    text-align: center;
+    border-bottom: 1px solid silver;
+    background-color: snow;
   }
 }
 
 .c-createmenuedit {
   &-item {
-    padding: 10px;
+    padding: 20px;
     border: 1px solid silver;
     border-radius: 5px;
     &__input {

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useShopContext } from '../../../../../store/ShopContext'
 
 import '../../../../../styles/projects/_createmenu.scss'
@@ -9,6 +9,8 @@ import '../../../../../styles/projects/_createmenu.scss'
 export default function CreateMenuEdit() {
   const { isShopdata } = useShopContext()
   const items = isShopdata.shoplist.items
+  //didunmountでデータ保存
+  useEffect(() => {}, [])
   return (
     <div className="c-createmenuedit">
       {items.map((item, i) => (
@@ -24,7 +26,11 @@ export default function CreateMenuEdit() {
             value={String(item.price)}
             placeholder="価格"
           />
-          <button>確定</button>
+          <input
+            className="c-createmenuedit-item__input"
+            value={String(item.description)}
+            placeholder="説明"
+          />
         </div>
       ))}
     </div>
