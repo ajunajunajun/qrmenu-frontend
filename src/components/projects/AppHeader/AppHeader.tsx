@@ -4,13 +4,14 @@ import '../../../styles/layouts/_header.scss'
 import { useRootContext } from '../../../store/RootContext'
 import Button from '../../ui/Button/Button'
 import { shoplist as shoplistJson } from '../../../fixtures/shoplist.json'
+import { useShopContext } from '../../../store/ShopContext'
 
 /**
  * アプリのヘッダー用プロジェクト
  */
 export default function AppHeader() {
   const { isAuthenticated, setAuthenticate } = useRootContext()
-  const { setShopdata } = useRootContext()
+  const { setShopdata } = useShopContext()
   const Login = () => {
     setAuthenticate(!isAuthenticated)
     setShopdata({
@@ -32,9 +33,7 @@ export default function AppHeader() {
         ) : (
           <></>
         )}
-        <Button onClick={Login}>
-        {String(isAuthenticated)}
-        </Button>
+        <Button onClick={Login}>{String(isAuthenticated)}</Button>
       </div>
     </header>
   )
