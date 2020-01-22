@@ -9,13 +9,19 @@ import axios from 'axios'
  * 初めに表示するページ
  */
 export default function IndexPage() {
+  const onClickPost = () => {
+    axios.post('http://localhost:8080', {
+      storename: 'torii'
+    })
+  }
+
   const [isData, setData] = useState<any>()
 
   useEffect(() => {
     axios
       .get('http://localhost:8080')
       .then((response: any) => {
-        setData(response.data.stores[0].ID)
+        setData(response.data.stores[0].storename)
       })
       .catch((err: Error) => {
         setData(err)
@@ -25,6 +31,7 @@ export default function IndexPage() {
   return (
     <div className="u-inner">
       <p>axios: {isData}</p>
+      <button onClick={onClickPost}>postpost</button>
       <div className="u-indexpage-div">
         <div className="u-indexpage-div-IMG">
           <h1 className="u-indexpage-div-title">
