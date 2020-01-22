@@ -6,8 +6,7 @@ import '../../../styles/utilities/_mypage.scss'
 import '../../../styles/utilities/_inner.scss'
 import img1 from '../MyPage/image/img1.jpeg'
 import img2 from '../MyPage/image/img2.jpg'
-import icon from '../MyPage/image/img3.png'
-
+import button from '../MyPage/image/button.png'
 /**
  * 初めに表示するページ
  */
@@ -113,7 +112,7 @@ export default function MyPage() {
             </div>
           </Link>
           <Link to="/createmenu" className="u-mypage-link">
-            <img src={icon} alt="追加ボタン" className="u-mypage-div3-button" />
+            <img src={button} alt="追加ボタン" className="u-mypage-div3-button" />
           </Link>
         </div>
       </div>
