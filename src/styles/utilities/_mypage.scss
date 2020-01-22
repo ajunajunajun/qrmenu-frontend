@@ -197,10 +197,13 @@ ul {
             }
             &-button{
                 position: absolute;
-                width: 100px;
-                height: 100px;
-                top: 130px;
-                right: 100px;
+                width: 120px;
+                height: 120px;
+                top: 100px;
+                right: 70px;
+                &:hover{
+                    opacity: .5;
+                }
             }
         }
     }
