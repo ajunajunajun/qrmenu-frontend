@@ -105,7 +105,10 @@ $sidebar_title_height: 20px;
     border-radius: 5px;
     &__input {
       box-sizing: border-box;
-      width: 100%;
+      width: 60%;
     }
+  }
+  &-element {
+    display: flex;
   }
 }
