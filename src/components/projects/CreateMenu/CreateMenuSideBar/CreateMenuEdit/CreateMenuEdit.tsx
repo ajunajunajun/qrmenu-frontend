@@ -48,7 +48,7 @@ export default function CreateMenuEdit() {
   return (
     <div className="c-createmenuedit">
       {items.map((item, i) => (
-        <div className="c-createmenuedit-item">
+        <div className="c-createmenuedit-item" key={i}>
           <p>ID：{item.id}</p>
           <div className="c-cretemenuedit-element">
             商品名：
