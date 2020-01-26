@@ -1,0 +1,25 @@
+.p-menuobject {
+  display: flex;
+  flex-wrap: wrap;
+  &__object {
+    position: relative;
+    word-wrap: break-word;
+    width: 50%;
+    border: 1px solid silver;
+    box-sizing: border-box;
+    background-color: white;
+    &--name {
+      text-align: center;
+    }
+    &--img {
+      height: 100px;
+      width: 100px;
+      margin: 0 auto;
+      border: 1px solid silver;
+      border-radius: 15px;
+    }
+    &--price {
+      text-align: right;
+    }
+  }
+}

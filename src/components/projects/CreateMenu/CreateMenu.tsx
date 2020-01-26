@@ -1,6 +1,6 @@
 import React from 'react'
 import { useShopContext } from '../../../store/ShopContext'
-import MenuObject from './CreateMenuObject/CreateMenuItems/CreateMenuItems'
+import MenuObject from '../MenuObject/MenuObject'
 
 /**
  * クリエイトメニュー画面のメインプロジェクト
@@ -12,7 +12,7 @@ export default function CreateMenu() {
   return (
     <div className="p-createmenu p-createmenu-inner">
       <div className="p-createmenu-wrapper">
-        <div className="p-createmenu-items">
+        <div className="p-menuobject">
           {items.map((item, i) => (
             <MenuObject item={item} key={i} />
           ))}
