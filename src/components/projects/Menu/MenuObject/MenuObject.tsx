@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { itemType } from '../../../domains/shopdata'
+import { itemType } from '../../../../domains/shopdata'
 
 /**
  * MenuObject の Props
