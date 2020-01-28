@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+.p-menu {
+  position: relative;
+  height: 100%;
+  background-color: lightgray;
+  &-wrap {
+    width: 100%;
+    text-align: center;
+    position: sticky;
+    left: 0;
+    bottom: 3%;
+  }
+  &-count {
+    position: absolute;
+    margin-top: calc(6% - 20px);
+    right: calc(15% - 20px);
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px dotted black;
+    border-radius: 50%;
+    background-color: lightcoral;
+  }
+  &-button {
+    padding: 3%;
+    margin-top: 6%;
+    width: 70%;
+  }
+  &-modal {
+    background-color: white;
+    height: 100%;
+    padding: 0 20px;
+    &--name {
+      text-align: center;
+      padding: 20px 0;
+      font-size: 1.5rem;
+    }
+    &--img {
+      height: 150px;
+      width: 150px;
+      margin: 0 auto;
+      border: 1px solid silver;
+      border-radius: 15px;
+      margin-bottom: 20px;
+    }
+    &--price {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+    &-description {
+      margin-bottom: 20px;
+    }
+    &-closebutton {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px dotted black;
+      font-size: 1.5rem;
+    }
+  }
+}
