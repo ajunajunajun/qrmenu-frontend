@@ -4,7 +4,7 @@
       "id": 0,
       "name": "山田太郎",
       "text": {
-        "title": "焼き肉のお店だよ！",
+        "title": "ごはんの食べれるお店だよ！",
         "description": "この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。"
       },
       "number": "09011112222",
@@ -13,52 +13,87 @@
       "items": [
         {
           "id": 0,
-          "name": "yasuimeat",
+          "name": "焼き鳥",
           "price": 200,
-          "description": "この文章はダミーです",
-          "img": "https:"
+          "description": "やきとりです",
+          "img": "https://res.cloudinary.com/crou/image/upload/v1580188621/samples/Foods/%E7%BE%8E%E5%94%84%E7%84%BC%E3%81%8D%E9%B3%A5_uq65rj.jpg"
         },
         {
           "id": 1,
-          "name": "takaipork",
-          "price": 600,
-          "description": "この文章はダミーです",
-          "img": "https:"
+          "name": "茶碗蒸し",
+          "price": 300,
+          "description": "結構美味しい茶碗蒸しだよ",
+          "img": "https://res.cloudinary.com/crou/image/upload/v1580188621/samples/Foods/%E8%8C%B6%E7%A2%97%E8%92%B8%E3%81%97_jntfha.jpg"
         },
         {
           "id": 2,
-          "name": "yasu-imeat",
-          "price": 200,
-          "description": "この文章はダミーです",
-          "img": "https:"
+          "name": "とりめし",
+          "price": 1000,
+          "description": "高級紅ショウガ乗ってます",
+          "img": "https://res.cloudinary.com/crou/image/upload/v1580188621/samples/Foods/%E9%B6%8F%E9%A3%AF_a8ypx4.jpg"
         },
         {
           "id": 3,
-          "name": "yaimeat",
-          "price": 200,
-          "description": "この文章はダミーです",
-          "img": "https:"
+          "name": "とりのから揚げ",
+          "price": 400,
+          "description": "レモンかけ放題付き",
+          "img": "https://res.cloudinary.com/crou/image/upload/v1580188621/samples/Foods/%E9%B6%8F%E3%81%AE%E3%81%8B%E3%82%89%E6%8F%9A%E3%81%92_uvv3sh.jpg"
         },
         {
           "id": 4,
-          "name": "yasssimeat",
-          "price": 200,
-          "description": "この文章はダミーです",
-          "img": "https:"
+          "name": "蕎麦",
+          "price": 600,
+          "description": "蕎麦（そば）とは、穀物のソバの実を原料とする蕎麦粉を用いて加工した、日本の麺類、および、それを用いた料理である。",
+          "img": "https://res.cloudinary.com/crou/image/upload/v1580188621/samples/Foods/%E9%B6%8F%E8%95%8E%E9%BA%A6_idbmt2.jpg"
         },
         {
           "id": 5,
-          "name": "yassumeat",
-          "price": 200,
-          "description": "この文章はダミーです",
-          "img": "https:"
+          "name": "醤油ラーメン",
+          "price": 720,
+          "description": "締めにどうぞ",
+          "img": "https://res.cloudinary.com/crou/image/upload/v1580188621/samples/Foods/%E9%86%A4%E6%B2%B9%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3_hnudxc.jpg"
         },
         {
           "id": 6,
-          "name": "yasusumeat",
-          "price": 200,
-          "description": "この文章はダミーです",
-          "img": "https:"
+          "name": "春菊のナムル",
+          "price": 250,
+          "description": "春を感じます",
+          "img": "https://res.cloudinary.com/crou/image/upload/v1580188621/samples/Foods/%E6%98%A5%E8%8F%8A%E3%81%AE%E3%83%8A%E3%83%A0%E3%83%AB_hoayy9.jpg"
+        },
+        {
+          "id": 7,
+          "name": "玉ねぎフライ",
+          "price": 400,
+          "description": "無添加玉ねぎ使用してます",
+          "img": "https://res.cloudinary.com/crou/image/upload/v1580188620/samples/Foods/%E7%8E%89%E3%81%AD%E3%81%8E%E3%83%95%E3%83%A9%E3%82%A4_fcgnpg.jpg"
+        },
+        {
+          "id": 8,
+          "name": "魚うどん",
+          "price": 500,
+          "description": "さかなうどんです。",
+          "img": "https://res.cloudinary.com/crou/image/upload/v1580188620/samples/Foods/%E9%AD%9A%E3%81%86%E3%81%A9%E3%82%93_qmzyke.jpg"
+        },
+        {
+          "id": 9,
+          "name": "牡蠣",
+          "price": 2000,
+          "description": "今朝取れた牡蠣です。",
+          "img": "https://res.cloudinary.com/crou/image/upload/v1580188620/samples/Foods/%E7%89%A1%E8%A0%A3_opebwy.jpg"
+        },
+        {
+          "id": 10,
+          "name": "ふぐ釜めし",
+          "price": 1500,
+          "description": "今朝取れたふぐです。",
+          "img": "https://res.cloudinary.com/crou/image/upload/v1580188620/samples/Foods/%E3%81%B5%E3%81%90%E9%87%9C%E9%A3%AF_r20fpb.jpg"
+        },
+        {
+          "id": 11,
+          "name": "たまごかけごはん",
+          "price": 300,
+          "description": "今朝取れた卵かけごはんです。",
+          "img": "https://res.cloudinary.com/crou/image/upload/v1580188620/samples/Foods/%E3%81%9F%E3%81%BE%E3%81%94%E3%81%8B%E3%81%91%E3%81%94%E3%81%AF%E3%82%93_ie49ff.jpg"
         }
       ]
     }
