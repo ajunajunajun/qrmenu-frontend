@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
+//import axios from 'axios'
 import '../../../styles/layouts/_header.scss'
 import { useRootContext } from '../../../store/RootContext'
 import Button from '../../ui/Button/Button'
@@ -16,9 +16,8 @@ export default function AppHeader() {
   const Login = () => {
     /*
     axios
-      .post('http://localhost:8080/user', {
-        userid: 1234,
-        userpass: 'testpass'
+      .post('http://localhost:8080/usershop', {
+        userid: 1234
       })
       .then(responce => {
         console.log(responce)

@@ -13,6 +13,7 @@ export default function Menu() {
   const { isShopdata } = useShopContext()
   const items = isShopdata.shoplist.items
   const [isOpen, setOpen] = useState(false)
+  const [isDetailsModal, setDetailsModal] = useState(false)
   const [isModalItem, setModalItem] = useState<itemType>({
     id: -1,
     name: '',
@@ -20,7 +21,9 @@ export default function Menu() {
     description: '',
     img: ''
   })
-  const [isCart, setCart] = useState({ cart: [-1] })
+  const [isCart, setCart] = useState<{ cart: number[] }>({ cart: [] })
+  const [isCartArr, setCartArr] = useState<number[]>([])
+
   const [isCountHidden, setCountHidden] = useState(true)
 
   const Modal = (item: itemType): void => {
@@ -30,21 +33,40 @@ export default function Menu() {
     setOpen(!isOpen)
   }
 
+  const closeModal = () => {
+    setOpen(false)
+    setDetailsModal(false)
+  }
+
   const addToCart = (itemId: number): void => {
     setCart({ cart: [...isCart.cart, itemId] })
   }
 
   useEffect(() => {
-    if (Array.from(new Set(isCart.cart)).length === 1) {
+    let counts: number[] = []
+
+    for (let i = 0; i < isCart.cart.length; i++) {
+      let key = isCart.cart[i]
+      counts[key] = counts[key] ? counts[key] + 1 : 1
+    }
+
+    setCartArr(counts)
+    if (Array.from(new Set(isCart.cart)).length === 0) {
       setCountHidden(true)
     } else {
       setCountHidden(false)
     }
   }, [isCart.cart])
 
+  const openDetails = () => {
+    setDetailsModal(true)
+    setOpen(!isOpen)
+  }
+
   const postCart = () => {
     console.log(isCart.cart)
-    setCart({ cart: [-1] })
+
+    setCart({ cart: [] })
   }
 
   return (
@@ -64,35 +86,56 @@ export default function Menu() {
           </div>
           <div className="p-menu-wrap">
             <p className="p-menu-count" hidden={isCountHidden}>
-              {Array.from(new Set(isCart.cart)).length - 1}
+              {Array.from(new Set(isCart.cart)).length}
             </p>
-            <button className="p-menu-button" onClick={postCart}>
+            <button className="p-menu-button" onClick={openDetails}>
               注文内容
             </button>
           </div>
         </>
       ) : (
         <div className="p-menu-modal">
-          <p className="p-menu-modal--name">{isModalItem.name}</p>
-          <div className="p-menu-modal--img"></div>
-          <p className="p-menu-modal--price">￥{isModalItem.price}</p>
-          <p className="p-menu-modal-description">{isModalItem.description}</p>
-
-          <div className="p-menu-wrap">
-            <button
-              className="p-menu-button"
-              onClick={() => addToCart(isModalItem.id)}
-            >
-              追加
-            </button>
-          </div>
-          {String(isCart.cart)}
-          <button
-            className="p-menu-modal-closebutton"
-            onClick={() => setOpen(!isOpen)}
-          >
-            ✕
-          </button>
+          {!isDetailsModal ? (
+            <>
+              <p className="p-menu-modal--title">{isModalItem.name}</p>
+              <button className="p-menu-modal-closebutton" onClick={closeModal}>
+                ✕
+              </button>
+              <div className="p-menu-modal--img"></div>
+              <p className="p-menu-modal--price">￥{isModalItem.price}</p>
+              <p className="p-menu-modal-description">
+                {isModalItem.description}
+              </p>
+              <div className="p-menu-wrap">
+                <button
+                  className="p-menu-button"
+                  onClick={() => addToCart(isModalItem.id)}
+                >
+                  追加
+                </button>
+              </div>
+              {String(isCart.cart)}
+            </>
+          ) : (
+            <>
+              <p className="p-menu-modal--title">注文内容</p>
+              <button className="p-menu-modal-closebutton" onClick={closeModal}>
+                ✕
+              </button>
+              <ul>
+                {Array.from(new Set(isCart.cart)).map((itemid, i) => (
+                  <li>
+                    {i + 1}：{items[itemid].name}：{isCartArr[i]}個
+                  </li>
+                ))}
+              </ul>
+              <div className="p-menu-wrap">
+                <button className="p-menu-button" onClick={postCart}>
+                  注文の確定
+                </button>
+              </div>
+            </>
+          )}
         </div>
       )}
     </div>
