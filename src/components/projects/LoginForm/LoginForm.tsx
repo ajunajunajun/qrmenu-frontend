@@ -1,5 +1,6 @@
 import React, { useState, ChangeEvent } from 'react'
 import '../../../styles/projects/_loginform.scss'
+import axios from 'axios'
 import { useRootContext } from '../../../store/RootContext'
 import { useShopContext } from '../../../store/ShopContext'
 import { shoplist as shoplistJson } from '../../../fixtures/shoplist.json'
@@ -24,23 +25,48 @@ export default function LoginForm() {
   }
 
   const Login = () => {
-    console.log(isId, isPassword)
-    /*
-    setAuthenticate(!isAuthenticated)
-    setShopdata({
-      shoplist: shoplistJson[0]
-    })
-    */
+    axios
+      .post('http://localhost:8080/user', {
+        userid: Number(isId),
+        userpass: String(isPassword)
+      })
+      .then(responce => {
+        if (responce.data.login) {
+          setAuthenticate(!isAuthenticated)
+          setShopdata({
+            shoplist: shoplistJson[0]
+          })
+        }
+      })
   }
   return (
-    <div className="p-loginform">
-      <p>loginform</p>
-      <p>id</p>
-      <input value={isId} onChange={event => ChangeId(event)} />
-      <p>password</p>
-      <input value={isPassword} onChange={event => ChangePassword(event)} />
-      <br />
-      <Button onClick={Login}>Login</Button>
-    </div>
+    <>
+      <h1 className="p-loginform-div-title2">CroU</h1>
+      <div className="cp_iptxt">
+        <input
+          className="ef"
+          type="text"
+          placeholder=""
+          value={isId}
+          onChange={ChangeId}
+        />
+        <label>ID</label>
+        <span className="focus_line"></span>
+      </div>
+      <div className="cp_iptxt">
+        <input
+          className="ef"
+          type="password"
+          placeholder=""
+          value={isPassword}
+          onChange={ChangePassword}
+        />
+        <label>パスワード</label>
+        <span className="focus_line"></span>
+      </div>
+      <div className="center">
+        <Button onClick={Login}>ログイン</Button>
+      </div>
+    </>
   )
 }

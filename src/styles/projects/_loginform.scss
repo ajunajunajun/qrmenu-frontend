@@ -1,9 +1,90 @@
 @charset "UTF-8";
 
+.center {
+  text-align: center;
+}
+
 .p-loginform {
   padding: 15px;
   background: white;
   color: black;
   border: 1px solid silver;
   border-radius: 5px;
+}
+
+.cp_iptxt {
+  position: relative;
+  width: 25%;
+  margin: 60px 38%;
+}
+.cp_iptxt input[type='text'] {
+  font: 15px/24px sans-serif;
+  box-sizing: border-box;
+  width: 100%;
+  letter-spacing: 1px;
+  padding-left: 4em;
+}
+.cp_iptxt input[type='text']:focus {
+  outline: none;
+}
+.cp_iptxt input[type='password'] {
+  font: 15px/24px sans-serif;
+  box-sizing: border-box;
+  width: 100%;
+  letter-spacing: 1px;
+  padding-left: 4em;
+}
+.cp_iptxt input[type='password']:focus {
+  outline: none;
+}
+.ef {
+  padding: 4px 0;
+  border: 0;
+  border-bottom: 1px solid #1b2538;
+  background-color: transparent;
+}
+.ef ~ .focus_line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  transition: 0.4s;
+  background-color: #da3c41;
+}
+.ef:focus ~ .focus_line,
+.cp_iptxt.ef ~ .focus_line {
+  width: 100%;
+  transition: 0.4s;
+}
+.ef ~ label {
+  position: absolute;
+  z-index: -1;
+  top: 4px;
+  left: 0;
+  width: 100%;
+  transition: 0.3s;
+  letter-spacing: 0.5px;
+  color: #aaaaaa;
+}
+.ef:focus ~ label,
+.cp_iptxt.ef ~ label {
+  font-size: 12px;
+  top: -16px;
+  transition: 0.3s;
+  color: #da3c41;
+}
+.p-loginform {
+  &-div {
+    &-title {
+      font-size: 20px;
+      color: rgb(63, 53, 38);
+      &2 {
+        padding-top: 40px;
+        text-align: center;
+        font-size: 100px;
+        color: rgb(63, 53, 38);
+      }
+    }
+  }
 }
