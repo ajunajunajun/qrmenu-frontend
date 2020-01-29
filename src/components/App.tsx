@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { MenuProvider } from '../store/MenuContext'
 import { RootProvider } from '../store/RootContext'
 import { ShopProvider } from '../store/ShopContext'
 import NonPrivateRoute from '../helpers/NonPrivateRoute'
@@ -13,28 +14,30 @@ import MenuPage from './pages/MenuPage/MenuPage'
 export default () => (
   <RootProvider>
     <ShopProvider>
-      <BrowserRouter>
-        <AppHeader />
-        <Switch>
-          <NonPrivateRoute
-            redirect="/my"
-            path="/"
-            exact={true}
-            component={IndexPage}
-          />
-          <PrivateRoute redirect="/">
-            <Switch>
-              <Route path="/my" exact={true} component={MyPage} />
-              <Route
-                path="/createmenu"
-                exact={true}
-                component={CreateMenuPage}
-              />
-              <Route path="/menu/:menuId" exact={true} component={MenuPage} />
-            </Switch>
-          </PrivateRoute>
-        </Switch>
-      </BrowserRouter>
+      <MenuProvider>
+        <BrowserRouter>
+          <AppHeader />
+          <Switch>
+            <NonPrivateRoute
+              redirect="/my"
+              path="/"
+              exact={true}
+              component={IndexPage}
+            />
+            <PrivateRoute redirect="/">
+              <Switch>
+                <Route path="/my" exact={true} component={MyPage} />
+                <Route
+                  path="/createmenu"
+                  exact={true}
+                  component={CreateMenuPage}
+                />
+                <Route path="/menu/:menuId" exact={true} component={MenuPage} />
+              </Switch>
+            </PrivateRoute>
+          </Switch>
+        </BrowserRouter>
+      </MenuProvider>
     </ShopProvider>
   </RootProvider>
 )

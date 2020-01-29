@@ -1,8 +1,9 @@
 import React, { createContext, useState, useMemo, useContext } from 'react'
+import { itemType } from '../domains/shopdata'
 
 /** todo type of menu */
 export const MenuContext = createContext<{
-  isMenudata: any
+  isMenudata: itemType
   setMenudata: React.Dispatch<React.SetStateAction<any>>
 } | null>(null)
 
@@ -29,7 +30,8 @@ export const useMenuContext = () => {
  * Login 済みかどうかの情報を保持する
  */
 export const MenuProvider = ({ children }: Props) => {
-  const [isMenudata, setMenudata] = useState<number>(0)
+  //一旦any
+  const [isMenudata, setMenudata] = useState<any>(null)
   const value = useMemo(() => ({ isMenudata, setMenudata }), [isMenudata])
   return <MenuContext.Provider value={value}>{children}</MenuContext.Provider>
 }

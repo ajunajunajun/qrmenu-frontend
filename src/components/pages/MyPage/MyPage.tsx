@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
 import { useShopContext } from '../../../store/ShopContext'
+import { useMenuContext } from '../../../store/MenuContext'
 import '../../../styles/utilities/_mypage.scss'
 import '../../../styles/utilities/_inner.scss'
 import img1 from '../MyPage/image/img1.jpeg'
@@ -12,7 +12,13 @@ import button from '../MyPage/image/button.png'
  */
 export default function MyPage() {
   const { isShopdata } = useShopContext()
+  const { isMenudata } = useMenuContext()
   const data = isShopdata.shoplist
+
+  const a = () => {
+    console.log(isMenudata)
+  }
+
   return (
     <div className="u-inner">
       <div className="u-mypage-div">
@@ -91,7 +97,11 @@ export default function MyPage() {
 
         <div className="u-mypage-div3">
           <p className="u-mypage-div3-text">メニュー</p>
-          <Link to="/createmenu" className="u-mypage-link">
+          <Link
+            to="/menu/1"
+            className="u-mypage-link"
+            hidden={isMenudata === null}
+          >
             <div className="u-mypage-div3-box">
               <img
                 src={img1}
@@ -102,17 +112,11 @@ export default function MyPage() {
             </div>
           </Link>
           <Link to="/createmenu" className="u-mypage-link">
-            <div className="u-mypage-div3-box2">
-              <img
-                src={img2}
-                alt="メニュー画像2"
-                className="u-mypage-div3-box2-img"
-              />
-              <p className="u-mypage-div3-box-text">春限定メニュー</p>
-            </div>
-          </Link>
-          <Link to="/createmenu" className="u-mypage-link">
-            <img src={button} alt="追加ボタン" className="u-mypage-div3-button" />
+            <img
+              src={button}
+              alt="追加ボタン"
+              className="u-mypage-div3-button"
+            />
           </Link>
         </div>
       </div>
