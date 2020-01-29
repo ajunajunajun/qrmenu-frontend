@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+//import axios from 'axios'
 import '../../../styles/layouts/_header.scss'
 import { useRootContext } from '../../../store/RootContext'
 import Button from '../../ui/Button/Button'
@@ -13,6 +14,15 @@ export default function AppHeader() {
   const { isAuthenticated, setAuthenticate } = useRootContext()
   const { setShopdata } = useShopContext()
   const Login = () => {
+    /*
+    axios
+      .post('http://localhost:8080/usershop', {
+        userid: 1234
+      })
+      .then(responce => {
+        console.log(responce)
+      })
+      */
     setAuthenticate(!isAuthenticated)
     setShopdata({
       shoplist: shoplistJson[0]

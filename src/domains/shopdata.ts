@@ -41,4 +41,7 @@ export type itemType = {
 
   /** 商品説明 */
   description: string
+
+  /** 商品画像url */
+  img: string
 }
