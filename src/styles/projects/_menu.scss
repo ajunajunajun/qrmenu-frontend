@@ -30,19 +30,24 @@
   &-modal {
     background-color: white;
     height: 100%;
-    padding: 0 20px;
+    padding: 0 40px;
     &--title {
       text-align: center;
       padding: 20px 0;
       font-size: 1.5rem;
     }
-    &--img {
+    &--imgwrap {
       height: 150px;
       width: 150px;
       margin: 0 auto;
       border: 1px solid silver;
       border-radius: 15px;
       margin-bottom: 20px;
+      &__img {
+        height: 100%;
+        width: 100%;
+        border-radius: 15px;
+      }
     }
     &--price {
       text-align: right;
@@ -60,6 +65,24 @@
       border-radius: 50%;
       border: 1px dotted black;
       font-size: 1.5rem;
+    }
+    &-details {
+      display: flex;
+      padding: 10px 0;
+      &--imgwrap {
+        height: 50px;
+        width: 50px;
+        border: 1px solid silver;
+        border-radius: 15px;
+        &__img {
+          height: 100%;
+          width: 100%;
+          border-radius: 15px;
+        }
+      }
+      &__text {
+        padding: 10px 20px;
+      }
     }
   }
 }

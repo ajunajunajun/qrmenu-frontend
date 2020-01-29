@@ -23,7 +23,6 @@ export default function Menu() {
   })
   const [isCart, setCart] = useState<{ cart: number[] }>({ cart: [] })
   const [isCartArr, setCartArr] = useState<number[]>([])
-
   const [isCountHidden, setCountHidden] = useState(true)
 
   const Modal = (item: itemType): void => {
@@ -50,7 +49,8 @@ export default function Menu() {
       counts[key] = counts[key] ? counts[key] + 1 : 1
     }
 
-    setCartArr(counts)
+    setCartArr(counts.filter(v => v))
+    console.log(counts.filter(v => v))
     if (Array.from(new Set(isCart.cart)).length === 0) {
       setCountHidden(true)
     } else {
@@ -101,7 +101,13 @@ export default function Menu() {
               <button className="p-menu-modal-closebutton" onClick={closeModal}>
                 ✕
               </button>
-              <div className="p-menu-modal--img"></div>
+              <div className="p-menu-modal--imgwrap">
+                <img
+                  className="p-menu-modal--imgwrap__img"
+                  src={isModalItem.img}
+                  alt="商品の写真"
+                />
+              </div>
               <p className="p-menu-modal--price">￥{isModalItem.price}</p>
               <p className="p-menu-modal-description">
                 {isModalItem.description}
@@ -124,8 +130,17 @@ export default function Menu() {
               </button>
               <ul>
                 {Array.from(new Set(isCart.cart)).map((itemid, i) => (
-                  <li>
-                    {i + 1}：{items[itemid].name}：{isCartArr[i]}個
+                  <li key={i} className="p-menu-modal-details">
+                    <div className="p-menu-modal-details--imgwrap">
+                      <img
+                        className="p-menu-modal-details--imgwrap__img"
+                        src={items[itemid].img}
+                        alt="商品の画像"
+                      />
+                    </div>
+                    <p className="p-menu-modal-details__text">
+                      {i + 1}：{items[itemid].name} {isCartArr[i]}個
+                    </p>
                   </li>
                 ))}
               </ul>
