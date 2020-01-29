@@ -2,6 +2,7 @@ import React from 'react'
 import { RouteComponentProps } from 'react-router-dom'
 import Menu from '../../projects/Menu/Menu'
 
+var QRCode = require('qrcode.react')
 /**
  * react-router-dom の Route の Props
  */
@@ -15,5 +16,10 @@ export default function MenuPage(props: RouteProps) {
     const menuId = props.match.params.id
   */
 
-  return <Menu />
+  return (
+    <>
+      <Menu />
+      <QRCode value="https://www.npmjs.com/package/qrcode.react" />
+    </>
+  )
 }
