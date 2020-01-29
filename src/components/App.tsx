@@ -10,6 +10,7 @@ import CreateMenuPage from './pages/CreateMenuPage/CreateMenuPage'
 import MyPage from './pages/MyPage/MyPage'
 import AppHeader from './projects/AppHeader/AppHeader'
 import MenuPage from './pages/MenuPage/MenuPage'
+import LoginPage from './pages/LoginPage/LoginPage'
 
 export default () => (
   <RootProvider>
