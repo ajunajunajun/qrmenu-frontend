@@ -19,7 +19,13 @@ export default function MenuObject(props: Props) {
   return (
     <>
       <p className="p-menuobject__object--name">{props.item.name}</p>
-      <div className="p-menuobject__object--img"></div>
+      <div className="p-menuobject__object--imgwrap">
+        <img
+          className="p-menuobject__object--imgwrap__img"
+          src={props.item.img}
+          alt="商品の写真"
+        />
+      </div>
       <p className="p-menuobject__object--price">￥{props.item.price}</p>
     </>
   )
