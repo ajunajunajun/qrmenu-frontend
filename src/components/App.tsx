@@ -9,6 +9,7 @@ import CreateMenuPage from './pages/CreateMenuPage/CreateMenuPage'
 import MyPage from './pages/MyPage/MyPage'
 import AppHeader from './projects/AppHeader/AppHeader'
 import MenuPage from './pages/MenuPage/MenuPage'
+import LoginPage from './pages/LoginPage/LoginPage'
 
 export default () => (
   <RootProvider>
@@ -22,6 +23,7 @@ export default () => (
             exact={true}
             component={IndexPage}
           />
+          <Route path="/login" exact={true} component={LoginPage} />
           <PrivateRoute redirect="/">
             <Switch>
               <Route path="/my" exact={true} component={MyPage} />
